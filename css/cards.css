@@ -1,0 +1,268 @@
+@import url("index.css");
+
+.active::before {
+  scale: 1;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.section_header {
+  text-align: center;
+  position: relative;
+  color: #fff;
+}
+
+.blog-post {
+  top: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 50rem;
+  background-color: #fff;
+  padding: 2.5rem;
+  box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.8rem;
+}
+.blog-post__img {
+  position: relative;
+  min-width: 15rem;
+  max-width: 30rem;
+  height: 15rem;
+  transform: translateX(-8rem);
+}
+.blog-post__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.8rem;
+}
+.blog-post__img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  box-shadow: 0.5rem 0.5rem 3rem 1px rgba(0, 0, 0, 0.05);
+  border-radius: 0.8rem;
+  opacity: 0.5;
+}
+.blog-post__date span {
+  display: block;
+  color: #8e8c8c;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+.blog-post__title {
+  font-size: 2.5rem;
+  margin: 1.5rem 0 1rem;
+  text-transform: uppercase;
+  color: #4facfe;
+}
+.blog-post__info p {
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+.blog-post__cta {
+  display: inline-block;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  padding: 1.5rem 3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 0.8rem;
+}
+.blog-post__cta:hover {
+  background-image: linear-gradient(to right, #00f2fe 0%, #4facfe 100%);
+}
+
+@media (max-width: 1068px) {
+  .blog-post {
+    max-width: 40rem;
+  }
+  .blog-post__img {
+    min-width: 20rem;
+    max-width: 20rem;
+  }
+}
+@media (max-width: 868px) {
+  .blog-post {
+    max-width: 45rem;
+  }
+}
+@media (max-width: 768px) {
+  #s1 {
+    top: -5rem;
+  }
+  .blog-post {
+    padding: 2.5rem;
+    flex-direction: column;
+    height: 30rem;
+  }
+  .blog-post__info {
+    top: -7rem;
+    position: relative;
+  }
+  .blog-post__img {
+    min-width: 100%;
+    transform: translate(0, -8rem);
+  }
+}
+
+/* GRADIENT CARD */
+
+.gradient-card {
+  top: 1rem;
+  display: grid;
+  place-items: center;
+  position: relative;
+  height: 150px;
+  width: 100px;
+  background: #191919;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #fff;
+}
+.gradient-card::before {
+  content: "";
+  width: 60px;
+  height: 300px;
+  left: 18px;
+  top: 70px;
+  position: absolute;
+  background: linear-gradient(#00e5ff, #b400fb);
+  animation-name: colchange;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes colchange {
+  25% {
+    color: #00a4bd;
+  }
+  50% {
+    color: #ff7a59;
+  }
+  75% {
+    color: #00bda5;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  180% {
+    transform: rotate(360deg);
+  }
+}
+.gradient-card::after {
+  content: "";
+  position: absolute;
+  background: #191919;
+  inset: 3px;
+  border-radius: 5px;
+}
+
+/* -------------CARD ANIMATION */
+.card {
+  background-color: #fff;
+  box-shadow: 2px 0.8rem 1rem rgba(0, 0, 0, 0.025);
+  border-radius: 10px;
+}
+
+.card__publication {
+  position: relative;
+  height: 20rem;
+  overflow: hidden;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.card__publication img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.card:hover .card__publication img {
+  transform: scale(1.5);
+}
+
+.card__publication > div {
+  background: linear-gradient(to right bottom, #0047b2, #06fbff);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  inset: 0;
+  padding: 1rem;
+}
+
+.card__publication i {
+  margin-right: 1rem;
+}
+
+.card__publication span {
+  display: block;
+}
+
+.card__author {
+  margin-bottom: 0.5rem;
+}
+
+.card__info {
+  position: relative;
+  padding: 2rem 3rem;
+}
+
+.card__title {
+  font-size: 3rem;
+}
+
+.card__subtitle {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #a2a2a2;
+  margin-bottom: 1rem;
+}
+
+.card__cta {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  color: #84b4fc;
+  margin-top: 2rem;
+}
+
+.card__cta span {
+  display: inherit;
+  transition: transform 0.5s;
+}
+
+.card__cta:hover span {
+  transform: translateX(0.5rem);
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    display: grid;
+    grid-auto-flow: column;
+    max-width: 50rem;
+  }
+
+  .card__publication {
+    width: 25rem;
+    height: initial;
+  }
+}
+/* -------------CARD ANIMATION */
