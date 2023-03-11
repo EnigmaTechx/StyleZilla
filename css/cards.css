@@ -28,6 +28,7 @@
   padding: 2.5rem;
   box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
   border-radius: 0.8rem;
+  margin: 2rem;
 }
 .blog-post__img {
   position: relative;
@@ -76,8 +77,11 @@
   text-transform: uppercase;
   color: #fff;
   border-radius: 0.8rem;
+  transition: 0.3s;
 }
 .blog-post__cta:hover {
+  cursor: pointer;
+  transition: 0.3s;
   background-image: linear-gradient(to right, #00f2fe 0%, #4facfe 100%);
 }
 
@@ -112,61 +116,6 @@
     min-width: 100%;
     transform: translate(0, -8rem);
   }
-}
-
-/* GRADIENT CARD */
-
-.gradient-card {
-  top: 1rem;
-  display: grid;
-  place-items: center;
-  position: relative;
-  height: 150px;
-  width: 100px;
-  background: #191919;
-  border-radius: 10px;
-  overflow: hidden;
-  color: #fff;
-}
-.gradient-card::before {
-  content: "";
-  width: 60px;
-  height: 300px;
-  left: 18px;
-  top: 70px;
-  position: absolute;
-  background: linear-gradient(#00e5ff, #b400fb);
-  animation-name: colchange;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes colchange {
-  25% {
-    color: #00a4bd;
-  }
-  50% {
-    color: #ff7a59;
-  }
-  75% {
-    color: #00bda5;
-  }
-}
-
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  180% {
-    transform: rotate(360deg);
-  }
-}
-.gradient-card::after {
-  content: "";
-  position: absolute;
-  background: #191919;
-  inset: 3px;
-  border-radius: 5px;
 }
 
 /* -------------CARD ANIMATION */
@@ -266,3 +215,82 @@
   }
 }
 /* -------------CARD ANIMATION */
+
+/* GRADIENT CARD */
+
+.gradient-card {
+  top: 1rem;
+  display: grid;
+  place-items: center;
+  position: relative;
+  height: 150px;
+  width: 100px;
+  background: #191919;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #fff;
+}
+.gradient-card::before {
+  content: "";
+  width: 60px;
+  height: 300px;
+  left: 18px;
+  top: 70px;
+  position: absolute;
+  background: linear-gradient(#00e5ff, #b400fb);
+  animation-name: colchange;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes colchange {
+  25% {
+    color: #00a4bd;
+  }
+  50% {
+    color: #ff7a59;
+  }
+  75% {
+    color: #00bda5;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  180% {
+    transform: rotate(360deg);
+  }
+}
+.gradient-card::after {
+  content: "";
+  position: absolute;
+  background: #191919;
+  inset: 3px;
+  border-radius: 5px;
+}
+
+/* ----ANIMATION CARD */
+.card_ani {
+  margin-top: 3rem;
+  width: 150px;
+  height: 200px;
+  background: url("../images/oppenheimer.jpg") center no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  transform: rotate(20deg) skew(-10deg, -5deg);
+  transition: translate 0.25s, box-shadow 0.25s;
+}
+.card_ani:hover {
+  cursor: pointer;
+  translate: 0 -30px;
+  box-shadow: 5px 3px rgb(217 220 242 / 75%), 10px 6px rgb(44 217 255 / 50%),
+    15px 9px rgb(126 255 178 / 25%);
+}
+
+/* ---FADED BACKGROUND */
+.faded_card {
+  background: linear-gradient(to right, rgb(0 0 0 / 0.5), rgb(0 0 0 / 0)),
+    url("../images//neon.jpg");
+}
